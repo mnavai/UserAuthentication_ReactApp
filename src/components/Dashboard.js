@@ -9,7 +9,7 @@ const Dashboard = () => {
     axios
       .get("http://localhost:8077/user", {
         headers: {
-          Authorization: `Bearer ${eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaGVlcmFqLnNpbmdoQHNudmEuY29tIiwicm9sZXMiOlsiUEFSVElDSVBBTlQiXSwiZXhwIjoxNjgzMjE4NjU1fQ.XhVfZp3mk4y7y9Inh5AsbZN6iMBZiSGdglo9E77jJeoh575Ef8vxMq66DdIS7J8IKAsw77vYdwLAoTafXBsG0g}`,
+          Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaGVlcmFqLnNpbmdoQHNudmEuY29tIiwicm9sZXMiOlsiUEFSVElDSVBBTlQiXSwiZXhwIjoxNjgzMjE4NjU1fQ.XhVfZp3mk4y7y9Inh5AsbZN6iMBZiSGdglo9E77jJeoh575Ef8vxMq66DdIS7J8IKAsw77vYdwLAoTafXBsG0g`,
           "Content-Type": "application/json",
         },
       })
