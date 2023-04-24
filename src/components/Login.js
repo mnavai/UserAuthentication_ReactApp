@@ -9,16 +9,11 @@ const Login = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8077/api/authenticate",
+        "http://localhost:8077/api/v1/user/authenticate",
         {
-          username,
-          password,
+          "email": username,
+          "password": password
         },
-        {
-          headers: {
-            Authorization: "Bearer",
-          },
-        }
       );
       localStorage.setItem("token", response.data.token);
       console.log(response.data);
