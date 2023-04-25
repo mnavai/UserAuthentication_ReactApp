@@ -10,7 +10,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
 
 
 const router = createBrowserRouter([
