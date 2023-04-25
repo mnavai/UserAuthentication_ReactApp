@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
+// import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -37,7 +37,7 @@ const Login = () => {
       <form className="form-signin" onSubmit={handleSubmit}>
         <h2 className="h3 mb-3 font-weight-normal">Login</h2>
         {errorMessage && <p className="error">{errorMessage}</p>}
-        <div>
+        <div className="form-group">
           <label htmlFor="username" className="sr-only">
             Username:
           </label>
@@ -52,7 +52,7 @@ const Login = () => {
             autoFocus
           />
         </div>
-        <div>
+        <div className="form-group">
           <label htmlFor="password" className="sr-only">
             Password:
           </label>
@@ -66,7 +66,7 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-pink">
+        <button type="submit" className="btn btn-primary btn-block">
           Login
         </button>
       </form>

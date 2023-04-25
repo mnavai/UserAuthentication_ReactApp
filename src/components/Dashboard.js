@@ -22,9 +22,11 @@ const Dashboard = () => {
   }, []);
 
   return (
-      <div className="dashboard-message">
-        <p>You have successfully logged in !</p>
+    <div class="container mt-5">
+      <div class="dashboard-message bg-white p-4 rounded shadow-sm">
+        <p class="h4 text-center text-primary mb-0">You have successfully logged in!</p>
       </div>
+    </div>
   );
 };
 
