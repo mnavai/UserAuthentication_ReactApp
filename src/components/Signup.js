@@ -15,12 +15,12 @@ const Signup = () => {
     };
     try {
       const response = await axios.post(
-        "http://localhost:8077/api/user",
+        "http://localhost:8077/api/v1/user/signup",
         newUser,
         {
-          headers: {
-            Authorization: "Bearer",
-          },
+          "name": name,
+          "email": email,
+          "password":password
         }
       );
       console.log(response.data);
@@ -31,35 +31,38 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Sign Up</h2>
-      <div>
-        <label htmlFor="name">Name:</label>
+      <h2 className="mb-4">Sign Up</h2>
+      <div className="mb-3">
+        <label htmlFor="name" className="form-label">Name:</label>
         <input
           type="text"
+          className="form-control"
           id="name"
           value={name}
           onChange={(event) => setName(event.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="email">Email:</label>
+      <div className="mb-3">
+        <label htmlFor="email" className="form-label">Email:</label>
         <input
           type="email"
+          className="form-control"
           id="email"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="password">Password:</label>
+      <div className="mb-3">
+        <label htmlFor="password" className="form-label">Password:</label>
         <input
           type="password"
+          className="form-control"
           id="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
         />
       </div>
-      <button type="submit">Sign Up</button>
+      <button type="submit" className="btn btn-primary">Sign Up</button>
     </form>
   );
 };
