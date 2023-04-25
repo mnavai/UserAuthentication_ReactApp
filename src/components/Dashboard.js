@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Logout from "./Logout";
 
 const Dashboard = () => {
   const [userInfo, setUserInfo] = useState({});
@@ -25,6 +26,14 @@ const Dashboard = () => {
     <div class="container mt-5">
       <div class="dashboard-message bg-white p-4 rounded shadow-sm">
         <p class="h4 text-center text-primary mb-0">You have successfully logged in!</p>
+        <br/>
+        <hr  style={{
+          color: '#000000',
+          backgroundColor: '#000000',
+          height: .8,
+          borderColor : '#000000'
+        }}/>
+        <Logout></Logout>
       </div>
     </div>
   );
