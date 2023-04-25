@@ -1,9 +1,9 @@
 import React from 'react';
+import Home from './pages/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import ReactDOM from 'react-dom/client';
-import Home from './pages/Home';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {
