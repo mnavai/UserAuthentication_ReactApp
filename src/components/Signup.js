@@ -3,6 +3,7 @@ import axios from "axios";
 
 const Signup = () => {
   const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,6 +20,7 @@ const Signup = () => {
         newUser,
         {
           "name": name,
+          "lastName":lastName,
           "email": email,
           "password":password
         }
@@ -40,6 +42,16 @@ const Signup = () => {
           id="name"
           value={name}
           onChange={(event) => setName(event.target.value)}
+        />
+      </div>
+      <div className="mb-3">
+        <label htmlFor="lastName" className="form-label">Last name:</label>
+        <input
+          type="text"
+          className="form-control"
+          id="lastName"
+          value={lastName}
+          onChange={(event) => setLastName(event.target.value)}
         />
       </div>
       <div className="mb-3">
