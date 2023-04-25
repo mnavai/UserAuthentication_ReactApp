@@ -3,8 +3,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import ReactDOM from 'react-dom/client';
+import Home from './pages/Home';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {
   createBrowserRouter,
@@ -16,7 +16,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
+    element: <Home></Home>,
   },{
     path: "/login",
     element: <Login></Login>,

@@ -24,7 +24,7 @@ const Dashboard = () => {
   return (
     <div>
       <h1>Welcome, {userInfo.name}!</h1>
-      <p>Email: {userInfo.email}</p>
+      <p> you successfully logged in</p>
     </div>
   );
 };
