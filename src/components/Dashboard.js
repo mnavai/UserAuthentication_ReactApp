@@ -10,7 +10,7 @@ const Dashboard = () => {
     axios
       .get("http://localhost:8077/api/v1/user/apiprofile", {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaGVlcmFqLnNpbmdoQHNudmEuY29tIiwicm9sZXMiOlsiUEFSVElDSVBBTlQiXSwiZXhwIjoxNjgzMjMyNjYzfQ.pQFWvTtqWVt1Vkx0S8To8IDZRWvg5jDJ5D4XqQImgywBsrRPnM1uP4DSw-yKdwT1gJfDH7dYwKsJ2DIkhQYfRA`,
+          Authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkaGVlcmFqLnNpbmdoQHNudmEuY29tIiwicm9sZXMiOlsiUEFSVElDSVBBTlQiXSwiZXhwIjoxNjgzMzk2NTU3fQ.y3W8DPFDRbsCS3f4TI3Tgv2pf3wXRVxDhZ7JC4mKWys2WDuQmO4Wrip1Kiy9ouADGauo5oNSo2c43tRq1P-hKw`,
           "Content-Type": "application/json",
         },
       })
