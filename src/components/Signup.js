@@ -38,7 +38,7 @@ const Signup = () => {
   return (
     <div className="container mt-5">
       <div className="row justify-content-center">
-        <div className="col-md-6">
+        <div>
           <form onSubmit={handleSubmit}>
             <h2 className="mb-4">Sign Up</h2>
             <div className="mb-3">
@@ -49,6 +49,7 @@ const Signup = () => {
                 id="name"
                 value={name}
                 onChange={(event) => setName(event.target.value)}
+                placeholder="Enter your name"
               />
             </div>
             <div className="mb-3">
@@ -59,6 +60,7 @@ const Signup = () => {
                 id="lastName"
                 value={lastName}
                 onChange={(event) => setLastName(event.target.value)}
+                placeholder="Enter your last name"
               />
             </div>
             <div className="mb-3">
@@ -69,6 +71,7 @@ const Signup = () => {
                 id="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
+                placeholder="Enter your email"
               />
             </div>
             <div className="mb-3">
@@ -79,12 +82,20 @@ const Signup = () => {
                 id="password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
+                placeholder="Enter your password"
               />
             </div>
-            <button type="submit" className="btn btn-primary">Sign Up</button>
+            <button type="submit" className="link">Sign Up</button>
           </form>
         </div>
       </div>
+      <style>
+        {`
+          input::placeholder {
+            font-size: 14px;
+          }
+        `}
+      </style>
     </div>
   );
 };
