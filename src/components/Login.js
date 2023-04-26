@@ -1,16 +1,18 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-// import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
+import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false); // Add a loading state
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true); // Set loading to true when the form is submitted
     try {
       const response = await axios.post(
         "http://localhost:8077/api/v1/user/authenticate",
@@ -30,14 +32,15 @@ const Login = () => {
         setErrorMessage("An error occurred. Please try again later.");
       }
     }
+    setLoading(false); // Set loading to false after the response is received
   };
 
   return (
     <div className="container d-flex align-items-center justify-content-center">
       <form className="form-signin" onSubmit={handleSubmit}>
-        <h2 className="h3 mb-3 font-weight-normal">Login</h2>
+        <h2 className="h3 mb-3 font-weight-normal">Login here:</h2>
         {errorMessage && <p className="error">{errorMessage}</p>}
-        <div className="form-group">
+        <div>
           <label htmlFor="username" className="sr-only">
             Username:
           </label>
@@ -52,7 +55,7 @@ const Login = () => {
             autoFocus
           />
         </div>
-        <div className="form-group">
+        <div>
           <label htmlFor="password" className="sr-only">
             Password:
           </label>
@@ -66,7 +69,8 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-primary btn-block">
+        <button type="submit" className="btn btn-pink" disabled={loading}> {/* Disable the button while loading */}
+          {loading && <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>} {/* Render the spinner if loading */}
           Login
         </button>
       </form>

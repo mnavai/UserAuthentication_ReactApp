@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 const Logout = () => {
     return (
         <div>
-            <Link to="/login">Logout</Link>
+            <Link to="/login">
+                <button type="submit" className="btn btn-pink"> 
+                Logout
+                </button>
+            </Link>
         </div>
     )
 }

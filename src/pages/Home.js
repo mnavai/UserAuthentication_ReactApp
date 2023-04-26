@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+// import img1 from "/images/img1.jpg";
 
 const Home = () => {
     return (
         <div>
             <div>
-                <img src="" alt="main page image"></img>
+                {/* <img src="/images/img1.jpg" alt="main image" /> */}
             </div>
-            <Link to="/login">Login</Link>|
-            <Link to="/signup">Register</Link>
+            <Link to="/login" className="link">Login</Link>
+            <Link to="/signup" className="link">Register</Link>
         </div>
     )
 }
