@@ -4,7 +4,7 @@ const Logout = () => {
     return (
         <div>
             <Link to="/login">
-                <button type="submit" className="btn btn-pink"> 
+                <button type="submit" className="link"> 
                 Logout
                 </button>
             </Link>
