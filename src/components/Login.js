@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
+import { login } from "../utils/apiUtils";
+// import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -10,27 +11,34 @@ const Login = () => {
   const [loading, setLoading] = useState(false); // Add a loading state
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit =  (event) => {
     event.preventDefault();
     setLoading(true); // Set loading to true when the form is submitted
     try {
-      const response = await axios.post(
-        "http://localhost:8077/api/v1/user/authenticate",
-        {
-          email: username,
-          password: password,
-        }
-      );
-      localStorage.setItem("token", response.data.token);
-      console.log(response.data);
-      navigate("/dashboard");
+
+      const response =  login({
+        email: username,
+        password: password,
+      })
+
+     // console.log("the reposne from login api utils " + JSON.stringify(response))
+      response.then(function (response) {
+        console.log(response.data);
+        localStorage.setItem("accessToken", response.data.response);
+        navigate("/dashboard");
+      }).catch(function (error) {
+        console.error(error);
+      });
+      
     } catch (error) {
       console.error(error);
-      if (error.response && error.response.status === 401) {
-        setErrorMessage("Invalid username or password");
-      } else {
-        setErrorMessage("An error occurred. Please try again later.");
-      }
+      setErrorMessage("Invalid username or password");
+      // console.error(error);
+      // if (error.response && error.response.status === 401) {
+      //   setErrorMessage("Invalid username or password");
+      // } else {
+      //   setErrorMessage("An error occurred. Please try again later.");
+      // }
     }
     setLoading(false); // Set loading to false after the response is received
   };

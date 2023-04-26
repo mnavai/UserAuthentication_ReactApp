@@ -11,7 +11,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
+// import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
+
 
 
 const router = createBrowserRouter([
