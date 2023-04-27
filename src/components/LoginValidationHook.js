@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { login } from "../utils/apiUtils";
 import {useForm} from "react-hook-form"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const LoginHook = () => {
   const { register, handleSubmit, watch, formState:{errors} } = useForm();  
   const [loading, setLoading] = useState(false); // Add a loading state
@@ -21,10 +23,21 @@ const LoginHook = () => {
         navigate("/dashboard");
       }).catch(function (error) {
         console.error(error);
+        toast.error('🦄 Wow so easy!', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          });
       });
     } catch (error) {
       console.error(error);
-      alert("Invalid username or password");
+      toast("Oops!! there is an erro")
+      //alert("Invalid username or password");
     }
     setLoading(false); // Set loading to false after the response is received
 
@@ -32,7 +45,7 @@ const LoginHook = () => {
   }
   return (
     <div className="container d-flex align-items-center justify-content-center">
-      
+      <ToastContainer></ToastContainer>
       <form className="form-signin" onSubmit={handleSubmit(onSubmit)}>
         <h2 className="h3 mb-3 font-weight-normal">Login here:</h2>        
         <div>
