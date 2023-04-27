@@ -10,6 +10,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import LoginHook from './components/LoginValidationHook';
 
 // import "/Users/mnavai/Desktop/My Practice File/user-authentication/src/index.css";
 
@@ -22,6 +23,9 @@ const router = createBrowserRouter([
   },{
     path: "/login",
     element: <Login></Login>,
+  },{
+    path: "/loginexample",
+    element: <LoginHook></LoginHook>,
   },{
     path: "/dashboard",
     element: <Dashboard></Dashboard>
